@@ -29,6 +29,14 @@ _UPDATE_WEIGHTS_MODEL_PAIR_IDS = (
 )
 
 SUITES = {
+    # no GPU required; safe to run on any CPU-only runner
+    "unit": [
+        "../unit/test_sampling_params_validate.py",
+        "../unit/test_storage.py",
+        "../unit/test_lora_format_adapter.py",
+        "../unit/test_server_args_unit.py",
+        # add new unit tests here
+    ],
     "1-gpu": [
         # RL tests
         "test_e2e_sleep_wake_up.py",
@@ -36,7 +44,6 @@ SUITES = {
         # Server tests
         "test_server_a.py",
         "test_server_b.py",
-        "test_lora_format_adapter.py",
         # cli test
         "../cli/test_generate_t2i_perf.py",
         # unit tests (no server needed)
