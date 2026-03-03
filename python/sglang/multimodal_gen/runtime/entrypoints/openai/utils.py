@@ -296,6 +296,7 @@ async def process_generation_batch(
                 frame_interpolation_scale=batch.frame_interpolation_scale,
                 frame_interpolation_model_path=batch.frame_interpolation_model_path,
             )
+
     total_time = time.perf_counter() - total_start_time
     log_batch_completion(logger, 1, total_time)
 
